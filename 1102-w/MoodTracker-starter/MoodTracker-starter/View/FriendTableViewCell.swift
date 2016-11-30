@@ -9,16 +9,19 @@
 import UIKit
 
 class FriendTableViewCell: UITableViewCell {
-  
-  var friend: Friend? // stores the friend that is displayed in this cell
-  
-  @IBAction func moodButtonPressed(_ sender: UIButton) {
-    print(#line, #function)
-  }
+    
+    var currentFriend: Friend?
+    var tableViewController: FriendsTableViewController?
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var moodTextLabel: UILabel!
+    @IBOutlet weak var moodButton: UIButton!
+    
+    @IBAction func moodButonPressed(_ sender: Any) {
+        tableViewController!.shitGotDone(currentFriend: currentFriend!)
+        
+    }
+    
 
 
-  
-
-  
-  
 }

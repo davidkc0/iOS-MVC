@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol tableViewDelegate {
+    
+}
+
 class MoodTableViewController: UITableViewController {
+    
 
   var friends: [Friend] = []
   

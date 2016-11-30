@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D5F-Ns-PwS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D5F-Ns-PwS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,28 +37,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" rowHeight="66" id="FY2-3Z-fSX" customClass="FriendTableViewCell" customModule="MoodTracker_starter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="66"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="66" id="FY2-3Z-fSX" customClass="FriendTableViewCell" customModule="MoodTracker_starter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FY2-3Z-fSX" id="TD3-iM-guv">
-                                    <frame key="frameInset" width="375" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8c-qa-EME">
+                                            <rect key="frame" x="8" y="8" width="63" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get off my lawn!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-su-edY">
+                                            <rect key="frame" x="8" y="40" width="118.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-dc-gC1">
+                                            <rect key="frame" x="326" y="9.5" width="33" height="47"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                             <state key="normal" title="😡"/>
                                             <connections>
-                                                <action selector="moodButtonPressed:" destination="FY2-3Z-fSX" eventType="touchUpInside" id="HxT-LF-g1f"/>
+                                                <action selector="moodButonPressed:" destination="FY2-3Z-fSX" eventType="touchUpInside" id="cBX-gx-oDz"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -68,6 +74,11 @@
                                         <constraint firstItem="Fea-dc-gC1" firstAttribute="centerY" secondItem="TD3-iM-guv" secondAttribute="centerY" id="v4c-kE-sUE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="moodButton" destination="Fea-dc-gC1" id="2g7-2M-yxk"/>
+                                    <outlet property="moodTextLabel" destination="qhZ-su-edY" id="NAA-4j-tzd"/>
+                                    <outlet property="nameLabel" destination="K8c-qa-EME" id="t9w-85-UV5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -78,77 +89,83 @@
                     <navigationItem key="navigationItem" id="8nk-hD-nlz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hho-DA-H4I">
                             <connections>
-                                <segue destination="Q2A-tL-vd8" kind="presentation" id="TgB-uy-HuQ"/>
+                                <segue destination="93S-oY-aB3" kind="show" identifier="destinationID" id="Nt9-GN-dEd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hj0-JK-yHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991" y="15"/>
+            <point key="canvasLocation" x="894" y="98"/>
         </scene>
-        <!--Add Friend View Controller-->
-        <scene sceneID="u2d-Pt-NUY">
+        <!--New Friend View Controller-->
+        <scene sceneID="M1z-68-Bjs">
             <objects>
-                <viewController id="Q2A-tL-vd8" customClass="AddFriendViewController" customModule="MoodTracker_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="93S-oY-aB3" customClass="NewFriendViewController" customModule="MoodTracker_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gCF-mU-4rv"/>
-                        <viewControllerLayoutGuide type="bottom" id="hkY-Zh-dVz"/>
+                        <viewControllerLayoutGuide type="top" id="JY7-Cw-8P4"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Cv-XT-FBV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SS9-Sr-0qt">
+                    <view key="view" contentMode="scaleToFill" id="H2c-Ek-yqL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80W-fN-8Tj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gma-cH-EIS">
+                                <rect key="frame" x="121" y="101" width="132" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS5-Ir-Knh">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-Ce-Q34">
+                                <rect key="frame" x="121" y="143" width="132" height="29"/>
+                                <segments>
+                                    <segment title="😀"/>
+                                    <segment title="😐"/>
+                                    <segment title="😡"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add a new friend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYq-Q4-qew">
+                                <rect key="frame" x="121" y="72" width="132" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="mgr-od-Sxm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-mB-rYw">
-                                <segments>
-                                    <segment title="Good 😁"/>
-                                    <segment title="Medium 😑"/>
-                                    <segment title="Bad 😡"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-Hv-bSu">
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwp-bC-kgS">
+                                <rect key="frame" x="162" y="207" width="51" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="fhW-ez-QBF"/>
+                                </constraints>
+                                <state key="normal" title="submit"/>
                                 <connections>
-                                    <action selector="cancelButtonPressed:" destination="Q2A-tL-vd8" eventType="touchUpInside" id="NlF-W7-AyH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae3-T8-l3N">
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="Q2A-tL-vd8" eventType="touchUpInside" id="ddt-8t-Di3"/>
+                                    <action selector="submitNewFriendButton:" destination="93S-oY-aB3" eventType="touchUpInside" id="2AP-jR-bdW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jyb-Hv-bSu" firstAttribute="top" secondItem="gCF-mU-4rv" secondAttribute="bottom" id="7ai-ow-dW2"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="leading" secondItem="NS5-Ir-Knh" secondAttribute="leading" id="CSz-Vu-yDu"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="leading" secondItem="80W-fN-8Tj" secondAttribute="leading" id="No0-Qo-53e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ae3-T8-l3N" secondAttribute="trailing" constant="6" id="RKR-Ld-Rnh"/>
-                            <constraint firstItem="jyb-Hv-bSu" firstAttribute="leading" secondItem="SS9-Sr-0qt" secondAttribute="leadingMargin" constant="-1" id="SGa-ca-6yU"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="top" secondItem="80W-fN-8Tj" secondAttribute="bottom" constant="24" id="Vue-ob-2aR"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="trailing" secondItem="Ae3-T8-l3N" secondAttribute="trailing" id="Xer-ij-Z6Q"/>
-                            <constraint firstItem="NS5-Ir-Knh" firstAttribute="top" secondItem="jyb-Hv-bSu" secondAttribute="bottom" constant="53" id="axF-tR-veb"/>
-                            <constraint firstItem="Ae3-T8-l3N" firstAttribute="top" secondItem="gCF-mU-4rv" secondAttribute="bottom" id="evQ-x8-Oxs"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="top" secondItem="NS5-Ir-Knh" secondAttribute="bottom" constant="8" id="gYZ-VU-uVd"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="trailing" secondItem="Ae3-T8-l3N" secondAttribute="trailing" id="oSj-7E-lsG"/>
-                            <constraint firstItem="NS5-Ir-Knh" firstAttribute="leading" secondItem="jyb-Hv-bSu" secondAttribute="leading" id="uBb-Uf-d0B"/>
+                            <constraint firstItem="vQd-Ce-Q34" firstAttribute="top" secondItem="gma-cH-EIS" secondAttribute="bottom" constant="12" id="49B-rc-eIs"/>
+                            <constraint firstItem="aYq-Q4-qew" firstAttribute="leading" secondItem="gma-cH-EIS" secondAttribute="leading" id="AIG-3s-GOl"/>
+                            <constraint firstItem="gma-cH-EIS" firstAttribute="trailing" secondItem="vQd-Ce-Q34" secondAttribute="trailing" id="Cgl-6v-PGI"/>
+                            <constraint firstItem="aYq-Q4-qew" firstAttribute="centerX" secondItem="H2c-Ek-yqL" secondAttribute="centerX" id="LuV-MK-F6P"/>
+                            <constraint firstItem="aYq-Q4-qew" firstAttribute="trailing" secondItem="gma-cH-EIS" secondAttribute="trailing" id="Nyh-VL-tHC"/>
+                            <constraint firstItem="gma-cH-EIS" firstAttribute="top" secondItem="aYq-Q4-qew" secondAttribute="bottom" constant="8" symbolic="YES" id="Pup-Fg-H44"/>
+                            <constraint firstItem="Bwp-bC-kgS" firstAttribute="top" secondItem="vQd-Ce-Q34" secondAttribute="bottom" constant="36" id="Z8v-K7-ZkN"/>
+                            <constraint firstItem="vQd-Ce-Q34" firstAttribute="centerX" secondItem="Bwp-bC-kgS" secondAttribute="centerX" id="xcC-Vf-mFk"/>
+                            <constraint firstItem="gma-cH-EIS" firstAttribute="leading" secondItem="vQd-Ce-Q34" secondAttribute="leading" id="yma-ub-vpX"/>
+                            <constraint firstItem="aYq-Q4-qew" firstAttribute="top" secondItem="JY7-Cw-8P4" secondAttribute="bottom" constant="8" symbolic="YES" id="zJF-rU-P5q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addFriendsName" destination="gma-cH-EIS" id="fvQ-aa-IH1"/>
+                        <outlet property="addMoodEmoji" destination="vQd-Ce-Q34" id="6HD-Re-vdo"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tDx-6x-MVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HpY-A6-pAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="15"/>
+            <point key="canvasLocation" x="1664.8" y="97.601199400299862"/>
         </scene>
     </scenes>
 </document>
